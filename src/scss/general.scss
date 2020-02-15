@@ -1,0 +1,15 @@
+/* General */
+.base-shadow {
+  -webkit-box-shadow: 2px 6px 46px -17px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 6px 46px -17px rgba(0,0,0,0.75);
+  box-shadow: 2px 6px 46px -17px rgba(0,0,0,0.75);  
+}
+.pointer {
+  cursor: pointer
+}
+
+.transition {
+  transition: 0.3s;
+}
+
+/* General End */

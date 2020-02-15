@@ -1,0 +1,119 @@
+/* Vars */
+$t-headerColor: #fff;
+$t-linkOnPageTop: #fff;
+$t-headerLogoWidth: 70px;
+$t-headerLogoHeight: 70px;
+
+$m-headerLogoWidth: 70px;
+$m-headerLogoHeight: 70px;
+$m-headerColor: #fff;
+
+.header-container {
+  position: fixed;
+  width: 100%;
+  display: grid;
+  height: 90px;
+}
+
+
+/* TransformHeader */
+.theader {
+  grid-template-columns: 30% 70%;
+  background-color: $t-headerColor;
+  .theader-logo {
+    margin: auto;
+    width: $t-headerLogoWidth;
+    height: $t-headerLogoHeight;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .navbar-container {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    justify-content: space-between; // Changable
+  }
+  &.on-top {
+    background-color: transparent;
+    .hlink {
+      color: $t-linkOnPageTop;
+    }
+    .center-border-hover {
+      &:after {
+        border-color: #fff;
+      }
+    }
+  }
+}
+/* TransformHeader End */
+
+/* MidLogoHeader */
+.mheader {
+  background-color: $m-headerColor;
+  grid-template-columns: 30% auto 30%;
+  .mheader-logo {
+    margin: auto;
+    width: $m-headerLogoWidth;
+    height: $m-headerLogoHeight;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .mheader-side {
+    margin: auto;
+  }
+  .mheader-left {
+    display: flex;
+  }
+}
+
+.target-burger{
+  &:hover{
+      opacity: 0.6;
+  }
+  &.toggled{
+      ul.buns{
+          li.bun{
+              -webkit-transform: rotate(45deg) translateZ(0);
+              transform: rotate(45deg) translateZ(0);
+              &:last-child{
+                  -webkit-transform: rotate(-45deg) translateZ(0);
+                  transform: rotate(-45deg) translateZ(0);
+              }
+          }
+      }
+  }
+  ul.buns{
+      width: 1.625em;
+      height: 1.625em;
+      list-style: none;
+      margin: -1.625em/2 0 0 -1.625em/2;
+      padding: 0;
+      -webkit-transition: -webkit-transform 1s cubic-bezier(.23,1,.32,1),color 1s cubic-bezier(.23,1,.32,1);
+      transition: transform 1s cubic-bezier(.23,1,.32,1),color 1s cubic-bezier(.23,1,.32,1);
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      color: #000;
+      li.bun{
+          width: 100%;
+          height: 2px;
+          background-color: #000;
+          position: absolute;
+          top: 50%;
+          margin-top: -.75px;
+          -webkit-transform: translateY(-3.75px) translateZ(0);
+          transform: translateY(-3.75px) translateZ(0);
+          -webkit-transition: -webkit-transform 1s cubic-bezier(.23,1,.32,1),background-color 1s cubic-bezier(.23,1,.32,1);
+          transition: transform 1s cubic-bezier(.23,1,.32,1),background-color 1s cubic-bezier(.23,1,.32,1);
+          &:last-child{
+              -webkit-transform: translateY(3.75px) translateZ(0);
+              transform: translateY(3.75px) translateZ(0);
+          }
+      }
+  }
+}
+
+/* MidLogoHeader End */
