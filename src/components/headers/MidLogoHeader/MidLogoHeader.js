@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Hlink} from '../header-links/Hlink';
 
 export const MidLogoHeader = ({ leftElement, imgElement, rightElement }) => {
 
@@ -22,6 +23,13 @@ export const MidLogoHeader = ({ leftElement, imgElement, rightElement }) => {
             <li className="bun"></li>
             <li className="bun"></li>
           </ul>
+        </div>
+        <div className={'m-header-navbar base-shadow ' + (toggleNavbar ? 'open' : '')}>
+          <Hlink content="aaaa"/>
+          <Hlink content="bbbb"/>
+          <Hlink content="cccc"/>
+          <Hlink content="dddd"/>
+          <Hlink content="ffff"/>
         </div>
       </div>
     </div>

@@ -1,0 +1,99 @@
+/* CenteredIntro */
+
+/* Vars */
+$c-introHieght: 100vh;
+$c-titleFontSize: 48px;
+$c-subTitleFontSize: 32px;
+$c-contentBorder: none; // 1px solid #fff;
+$c-titleColor: #fff;
+$c-backgroundImage: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+  url("../assets/images/theregisti-HSXIp58yPyI-unsplash.jpg");
+
+.centered-intro-container {
+  width: 100%;
+  height: $c-introHieght;
+  background-image: $c-backgroundImage;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 15% auto 15%;
+  grid-template-rows: 20% auto 15%;
+  .content-container {
+    border: $c-contentBorder;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title {
+      color: $c-titleColor;
+      font-size: $c-titleFontSize;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .sub-title {
+      color: #ccc;
+      font-size: $c-subTitleFontSize;
+      margin-bottom: 20px;
+    }
+    .btn-wrapper {
+      color: $c-titleColor;
+    }
+  }
+}
+/* CenteredIntro End */
+
+/* WindowsIntro */
+
+/* Vars*/
+.windows-intro-container {
+  display: grid;
+  grid-template-columns: 6% auto 6%;
+  grid-template-rows: 18% auto 6%;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#ffeaa7, #ffeaa7, #fff);
+  .content-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 20% 20% 20% 20%;
+    grid-column-gap: 25px;
+    grid-row-gap: 5px;
+    .title-container {
+      .title {
+        font-size: 46px;
+      }
+      .sub-title {
+        font-size: 30px;
+      }
+    }
+    .main-window {
+      grid-row-start: 2;
+      grid-row-end: 6;
+      background-image: url('../assets/images/matthew-brodeur-DH_u2aV3nGM-unsplash.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+    .secondary-window {
+      background-image: url('../assets/images/wil-stewart-K_TbABnVzHo-unsplash.jpg');
+      background-position: center;
+      background-size: cover;
+      grid-column-start: 2;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+    .btn-wrapper {
+      margin: auto;
+    }
+  }
+}
+/* WindowsIntro End */
