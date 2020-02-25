@@ -10,7 +10,7 @@ export const MidLogoHeader = ({ leftElement, imgElement, rightElement }) => {
   }
 
   return (
-    <div className="header-container mheader base-shadow">
+    <div className="header-container mheader base-shadow z-index">
       <div className="mheader-side mheader-left">
         {leftElement}
       </div>

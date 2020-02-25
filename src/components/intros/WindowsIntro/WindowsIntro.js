@@ -1,4 +1,5 @@
 import React from 'react';
+import { DoubleBtn } from '../../buttons/DoubleBtn';
 
 export const WindowsIntro = () => {
   return (
@@ -14,7 +15,9 @@ export const WindowsIntro = () => {
         </div>
         <div className="secondary-window base-shadow"></div>
         <div className="main-window base-shadow"></div>
-        <div className="btn-wrapper">Btn goes here</div>
+        <div className="btn-wrapper">
+          <DoubleBtn handleClick={() => console.log('Clicked!')} content="SEE MORE" styleClasses="transition pointer"/>
+        </div>
       </div>
     </div>
   );
