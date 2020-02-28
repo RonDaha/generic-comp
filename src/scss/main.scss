@@ -44,26 +44,6 @@ color: #000;
 
 /* Titled End */
 
-/* Cards */
-.cards-container {
- display: flex;
- width: 100%;
- justify-content: center;
- flex-wrap: wrap;
-}
-.three-steps-card-container {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: center;
-  width: 30%;
-  .step {
-    margin-bottom: 18px;
-  }
-  .step-two {}
-  .step-three {}
-}
-/* Cards End */
 
 /* Rows */
 .double-sides-row-container {
