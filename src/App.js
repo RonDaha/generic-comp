@@ -18,9 +18,15 @@ function App() {
         <TitleA titleContent="Cards" />
         <CardsContainer />
         <TitleA titleContent="Rows" />
-        <DoubleSidesRow />
-        <TripleSidesRow />
+        <DoubleSidesRow 
+          sideA="This is the side A content!"
+          sideB={(<img alt="im" src={require('./assets/images/demo-trans.jpg')}></img>)} />
+        <DoubleSidesRow 
+          sideA={(<img alt="im" src={require('./assets/images/demo-trans2.jpg')}></img>)}
+          sideB="This is the side B content!" />
+        <TripleSidesRow sideA="Side A content!" sideB="Side B content!" sideC="Side C content!" />
         <TitleA titleContent="Buttons" />
+        <TitleA titleContent="Spring" />
       </div>
     </Router>
 

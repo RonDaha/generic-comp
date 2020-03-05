@@ -2,6 +2,7 @@ import React from 'react';
 import { MultiCard } from './MultiCard';
 import { FadeCard } from './FadeCard';
 import { ThreeStepsCard } from './ThreeStepsCard';
+import { BaseCard } from './BaseCard';
 import { BaseBtn } from '../buttons/BaseBtn';
 
 
@@ -27,6 +28,7 @@ export const CardsContainer = () => {
         stlyeClasses="base-shadow"
         cardSteps={[{id: 1, step: 'Step One'}, {id: 2, step: 'Step Two'}, {id: 3, step: <BaseBtn content="Step Three" styleClasses="squreBtn transition"/>} ]}
       />
+      <BaseCard content="Base Card Content" stlyeClasses="scale-in transition pointer base-shadow"/>
     </div>
 
     // <div className="cards-container">

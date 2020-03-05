@@ -45,35 +45,7 @@ color: #000;
 /* Titled End */
 
 
-/* Rows */
-.double-sides-row-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  height: 200px;
-  text-align: center;
-  .side-a {
-    background-color: #ccc;
-  }
-  .side-b {
-  }
-}
 
-.triple-sides-row-container {
-  margin-top: 50px;
-  height: 200px;
-  display: grid;
-  grid-template-columns: 25% auto 25%;
-  text-align: center;
-  background-image: url('../assets/images/theregisti-HSXIp58yPyI-unsplash.jpg');
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  .side-b {
-    background-color: #ccc;
-  }
-}
-/* Rows End */
 
 @import './hover-effects.scss';
 @import './general.scss';
@@ -83,3 +55,4 @@ color: #000;
 @import './intros.scss';
 @import './buttons.scss';
 @import './cards.scss';
+@import './rows.scss';

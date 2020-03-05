@@ -1,16 +1,34 @@
-import React, { useState } from 'react';
-import {Hlink} from '../header-links/Hlink';
+import React, { useState, useEffect, useRef } from 'react';
+import { Hlink } from '../header-links/Hlink';
+import { Strail } from '../../spring-adapters';
 
-export const MidLogoHeader = ({ leftElement, imgElement, rightElement }) => {
+export const MidLogoHeader = ({ leftElement, imgElement, rightElement, styleClasses }) => {
 
   const [toggleNavbar, setToggleNavbar] = useState(false);
+  let shadowHeaderRef = useRef(null);
+  useEffect(() => {
+    let timeOut;
+    if (!toggleNavbar) {
+      timeOut = setTimeout(() => {
+        shadowHeaderRef.current.style.display = 'none';
+      }, 300)
+    } else {
+      shadowHeaderRef.current.style.display = 'flex';
+    }
+    return () => clearTimeout(timeOut);
+  }, [toggleNavbar])
 
   const handleNavbarToggle = () => {
     setToggleNavbar(!toggleNavbar)
   }
 
+  const hlinks = [<Hlink key="1" content="Link One" />,
+  <Hlink key="2" content="Link Two" />,
+  <Hlink key="3" content="Link Three" />,
+  <Hlink key="4" content="Link Four" />]
+
   return (
-    <div className="header-container mheader base-shadow z-index">
+    <div className={"header-container mheader base-shadow z-index " + styleClasses}>
       <div className="mheader-side mheader-left">
         {leftElement}
       </div>
@@ -24,12 +42,8 @@ export const MidLogoHeader = ({ leftElement, imgElement, rightElement }) => {
             <li className="bun"></li>
           </ul>
         </div>
-        <div className={'m-header-navbar base-shadow ' + (toggleNavbar ? 'open' : '')}>
-          <Hlink content="aaaa"/>
-          <Hlink content="bbbb"/>
-          <Hlink content="cccc"/>
-          <Hlink content="dddd"/>
-          <Hlink content="ffff"/>
+        <div className={'m-header-navbar ' + (toggleNavbar ? 'open' : '')}>
+          <Strail parentRef={shadowHeaderRef} toggle={toggleNavbar} items={hlinks} containerClass="m-header-navbar-wrapper" />
         </div>
       </div>
     </div>

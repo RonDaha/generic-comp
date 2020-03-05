@@ -1,0 +1,32 @@
+/* DoubleSidesRow */
+.double-sides-row-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+  .side {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* DoubleSidesRow End */
+
+/* TrileSidesRow */
+.triple-sides-row-container {
+  display: grid;
+  grid-template-columns: 25% auto 25%;
+  text-align: center;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  .side {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+/* TrileSidesRow End */

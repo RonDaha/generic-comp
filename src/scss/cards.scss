@@ -216,8 +216,10 @@ $f-dateTwoFontSize: 14px;
 }
 
 /* ThreeStepsCard */
+/* Vars */
 
 .three-steps-card-container {
+  // TODO - add vars!
   width: 300px;
   padding: 40px;
   border: 1px solid #ccc;
@@ -230,4 +232,21 @@ $f-dateTwoFontSize: 14px;
     margin: 8px 0;
   }
 }
-/* Cards End */
+/* ThreeStepsCard End */
+
+
+/* BaseCard */
+/* Vars */
+
+.base-card-container {
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1498511133332-ad66b117f533?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=946&q=80');
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 390px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+/* BaseCard End*/
