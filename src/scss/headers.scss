@@ -70,26 +70,27 @@ $m-headerColor: #fff;
     display: flex;
   }
   .mheader-right {
-    position: relative;
     .m-header-navbar {
       display: grid;
       grid-template-columns: 20% auto 20%;
-      grid-template-rows: 10% auto;
+      grid-template-rows: 18% auto;
       left: 0;
-      top: $m-headerLogoHeight + 20px;
+      top: 0;
       width: 100vw;
+      height: 100vh;
       position: fixed;
       background-color: rgba(0, 0, 0, 0.8);
       text-align: center;
-      height: 100vh;
       transition: .3s;
       opacity: 0;
+      visibility: hidden;
       .m-header-navbar-wrapper {
         grid-row-start: 2;
         grid-column-start: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
         .hlink {
           width: fit-content;
           color: #fff;
@@ -98,6 +99,7 @@ $m-headerColor: #fff;
         }
       }
       &.open {
+        visibility: visible;
         opacity: 1;
       }
     }
@@ -107,13 +109,16 @@ $m-headerColor: #fff;
 
 // TODO - move this to seperate file
 /* Burger */
-.target-burger{
+.target-burger {
   &:hover{
       opacity: 0.6;
   }
   &.toggled{
+    z-index: 2;
+    position: relative;
       ul.buns{
           li.bun{
+              background-color: #fff;
               -webkit-transform: rotate(45deg) translateZ(0);
               transform: rotate(45deg) translateZ(0);
               &:last-child{

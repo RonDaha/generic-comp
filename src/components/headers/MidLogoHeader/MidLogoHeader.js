@@ -5,19 +5,6 @@ import { Strail } from '../../spring-adapters';
 export const MidLogoHeader = ({ leftElement, imgElement, rightElement, styleClasses }) => {
 
   const [toggleNavbar, setToggleNavbar] = useState(false);
-  let shadowHeaderRef = useRef(null);
-  useEffect(() => {
-    let timeOut;
-    if (!toggleNavbar) {
-      timeOut = setTimeout(() => {
-        shadowHeaderRef.current.style.display = 'none';
-      }, 300)
-    } else {
-      shadowHeaderRef.current.style.display = 'flex';
-    }
-    return () => clearTimeout(timeOut);
-  }, [toggleNavbar])
-
   const handleNavbarToggle = () => {
     setToggleNavbar(!toggleNavbar)
   }
@@ -28,7 +15,7 @@ export const MidLogoHeader = ({ leftElement, imgElement, rightElement, styleClas
   <Hlink key="4" content="Link Four" />]
 
   return (
-    <div className={"header-container mheader base-shadow z-index " + styleClasses}>
+    <div className={"header-container mheader base-shadow z-index " + (styleClasses ? styleClasses : '')}>
       <div className="mheader-side mheader-left">
         {leftElement}
       </div>
@@ -43,7 +30,7 @@ export const MidLogoHeader = ({ leftElement, imgElement, rightElement, styleClas
           </ul>
         </div>
         <div className={'m-header-navbar ' + (toggleNavbar ? 'open' : '')}>
-          <Strail parentRef={shadowHeaderRef} toggle={toggleNavbar} items={hlinks} containerClass="m-header-navbar-wrapper" />
+          <Strail toggle={toggleNavbar} items={hlinks} containerClass="m-header-navbar-wrapper" />
         </div>
       </div>
     </div>
