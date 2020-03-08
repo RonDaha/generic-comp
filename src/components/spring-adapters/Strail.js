@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTrail, animated } from 'react-spring'
 
-export const Strail = ({ parentRef, items, toggle, containerClass }) => {
+export const Strail = ({ parentRef, items, toggle, containerClass, addConfig = {}, stepsHieght = 40, stepsX = 20 }) => {
 
-  const config = { mass: 5, tension: 2000, friction: 200 }
+  const config = { mass: 5, tension: 2000, friction: 200, ...addConfig }
   const trail = useTrail(items.length, {
     config,
     opacity: toggle ? 1 : 0,
-    x: toggle ? 0 : 20,
-    height: toggle ? 40 : 0,
-    from: { opacity: 0, x: 20, height: 0 },
+    x: toggle ? stepsX : 50,
+    height: toggle ? stepsHieght : 0,
+    from: { opacity: 0, x: stepsX, height: 0 },
   })
   return (
     <div className={containerClass} ref={parentRef}>

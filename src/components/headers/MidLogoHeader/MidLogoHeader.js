@@ -30,7 +30,7 @@ export const MidLogoHeader = ({ leftElement, imgElement, rightElement, styleClas
           </ul>
         </div>
         <div className={'m-header-navbar ' + (toggleNavbar ? 'open' : '')}>
-          <Strail toggle={toggleNavbar} items={hlinks} containerClass="m-header-navbar-wrapper" />
+          <Strail stepsHieght={50} addConfig={{friction: 250, mass: 12}} toggle={toggleNavbar} items={hlinks} containerClass="m-header-navbar-wrapper" />
         </div>
       </div>
     </div>
